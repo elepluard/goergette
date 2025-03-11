@@ -99,7 +99,6 @@ public class CommandListener extends ListenerAdapter {
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         if (!event.isFromGuild()
             || !(enableMessageContent || event.getMessage().getMentions().isMentioned(event.getGuild().getSelfMember(), Message.MentionType.USER))
-            || event.getAuthor().isBot()
             || event.isWebhookMessage()) {
             return;
         }
